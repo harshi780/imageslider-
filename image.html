@@ -1,211 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fody Slider</title>
-  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .item {
+            min-width: 100%;
+            box-sizing: border-box;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+        }
+
+        .content {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .content .name {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .content .des {
+            margin-top: 5px;
+            font-size: 16px;
+        }
+
+        .content button {
+            margin-top: 10px;
+            padding: 8px 16px;
+            border: none;
+            background-color: #ff5733;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .button {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .button button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+        }
+
+        .button button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+    </style>
 </head>
-
 <body>
-  <section id="tranding">
-    <div class="container">
-      <h3 class="text-center section-subheading">- popular Delivery -</h3>
-      <h1 class="text-center section-heading">Trending Food</h1>
-    </div>
-    <div class="container">
-      <div class="swiper tranding-slider">
-        <div class="swiper-wrapper">
-          <!-- Slide-start -->
-          <div class="swiper-slide tranding-slide">
-            <div class="tranding-slide-img">
-              <img src="file:///E:/images/tranding-food-1.png" alt="Trending Food 1">
-            </div>
-            <div class="tranding-slide-content">
-              <h1 class="food-price">$20</h1>
-              <div class="tranding-slide-content-bottom">
-                <h2 class="food-name">Special Pizza</h2>
-                <h3 class="food-rating">
-                  <span>4.5</span>
-                  <div class="rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                  </div>
-                </h3>
-              </div>
-            </div>
-          </div>
-          <!-- Slide-end -->
 
-          <!-- Slide-start -->
-          <div class="swiper-slide tranding-slide">
-            <div class="tranding-slide-img">
-              <img src="file:///E:/images/tranding-food-2.png" alt="Trending Food 2">
-            </div>
-            <div class="tranding-slide-content">
-              <h1 class="food-price">$20</h1>
-              <div class="tranding-slide-content-bottom">
-                <h2 class="food-name">Meat Ball</h2>
-                <h3 class="food-rating">
-                  <span>4.5</span>
-                  <div class="rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                  </div>
-                </h3>
-              </div>
-            </div>
-          </div>
-          <!-- Slide-end -->
+<div class="container">
 
-          <!-- Slide-start -->
-          <div class="swiper-slide tranding-slide">
-            <div class="tranding-slide-img">
-              <img src="file:///E:/images/tranding-food-3.png" alt="Trending Food 3">
-            </div>
-            <div class="tranding-slide-content">
-              <h1 class="food-price">$40</h1>
-              <div class="tranding-slide-content-bottom">
-                <h2 class="food-name">Burger</h2>
-                <h3 class="food-rating">
-                  <span>4.5</span>
-                  <div class="rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                  </div>
-                </h3>
-              </div>
-            </div>
-          </div>
-          <!-- Slide-end -->
+    <div class="slide">
 
-          <!-- Slide-start -->
-          <div class="swiper-slide tranding-slide">
-            <div class="tranding-slide-img">
-              <img src="file:///E:/images/tranding-food-4.png" alt="Trending Food 4">
+        <div class="item" style="background-image: url(https://i.ibb.co/qCkd9jS/img1.jpg);">
+            <div class="content">
+                <div class="name">Switzerland</div>
+                <div class="des">A land where majestic Alps meet serene lakes, Switzerland is a paradise for nature lovers and adventurers alike</div>
+                <button>See More</button>
             </div>
-            <div class="tranding-slide-content">
-              <h1 class="food-price">$15</h1>
-              <div class="tranding-slide-content-bottom">
-                <h2 class="food-name">Fish Curry</h2>
-                <h3 class="food-rating">
-                  <span>4.5</span>
-                  <div class="rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                  </div>
-                </h3>
-              </div>
+        </div>
+        <div class="item" style="background-image: url(https://i.ibb.co/jrRb11q/img2.jpg);">
+            <div class="content">
+                <div class="name">Finland</div>
+                <div class="des">Where the northern lights dance across the sky, and serene forests and lakes create a tranquil haven in Finland</div>
+                <button>See More</button>
             </div>
-          </div>
-          <!-- Slide-end -->
-
-          <!-- Slide-start -->
-          <div class="swiper-slide tranding-slide">
-            <div class="tranding-slide-img">
-              <img src="file:///E:/images/tranding-food-5.png" alt="Trending Food 5">
+        </div>
+        <div class="item" style="background-image: url(https://i.ibb.co/NSwVv8D/img3.jpg);">
+            <div class="content">
+                <div class="name">Iceland</div>
+                <div class="des">A land of fire and ice, Iceland offers stunning contrasts with its dramatic landscapes and geothermal wonders</div>
+                <button>See More</button>
             </div>
-            <div class="tranding-slide-content">
-              <h1 class="food-price">$15</h1>
-              <div class="tranding-slide-content-bottom">
-                <h2 class="food-name">Pancake</h2>
-                <h3 class="food-rating">
-                  <span>4.5</span>
-                  <div class="rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                  </div>
-                </h3>
-              </div>
+        </div>
+        <div class="item" style="background-image: url(https://i.ibb.co/Bq4Q0M8/img4.jpg);">
+            <div class="content">
+                <div class="name">Australia</div>
+                <div class="des">From the Outback's rugged beauty to the vibrant coastal cities, Australia is a land of endless adventure and diversity</div>
+                <button>See More</button>
             </div>
-          </div>
-          <!-- Slide-end -->
-
-          <!-- Slide-start -->
-          <div class="swiper-slide tranding-slide">
-            <div class="tranding-slide-img">
-              <img src="file:///E:/images/tranding-food-6.png" alt="Trending Food 6">
+        </div>
+        <div class="item" style="background-image: url(https://i.ibb.co/jTQfmTq/img5.jpg);">
+            <div class="content">
+                <div class="name">Netherland</div>
+                <div class="des">Where windmills, tulip fields, and charming canals create a picturesque landscape in the Netherlands</div>
+                <button>See More</button>
             </div>
-            <div class="tranding-slide-content">
-              <h1 class="food-price">$20</h1>
-              <div class="tranding-slide-content-bottom">
-                <h2 class="food-name">Vanilla Cake</h2>
-                <h3 class="food-rating">
-                  <span>4.5</span>
-                  <div class="rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                  </div>
-                </h3>
-              </div>
+        </div>
+        <div class="item" style="background-image: url(https://i.ibb.co/RNkk6L0/img6.jpg);">
+            <div class="content">
+                <div class="name">Ireland</div>
+                <div class="des">A country of rolling green hills, ancient castles, and rich cultural heritage, Ireland enchants with its timeless beauty</div>
+                <button>See More</button>
             </div>
-          </div>
-          <!-- Slide-end -->
-
-          <!-- Slide-start -->
-          <div class="swiper-slide tranding-slide">
-            <div class="tranding-slide-img">
-              <img src="file:///E:/images/tranding-food-7.png" alt="Trending Food 7">
-            </div>
-            <div class="tranding-slide-content">
-              <h1 class="food-price">$8</h1>
-              <div class="tranding-slide-content-bottom">
-                <h2 class="food-name">Strawberry Cake</h2>
-                <h3 class="food-rating">
-                  <span>4.5</span>
-                  <div class="rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                  </div>
-                </h3>
-              </div>
-            </div>
-          </div>
-          <!-- Slide-end -->
         </div>
 
-        <div class="tranding-slider-control">
-          <div class="swiper-button-prev slider-arrow">
-            <ion-icon name="arrow-back-outline"></ion-icon>
-          </div>
-          <div class="swiper-button-next slider-arrow">
-            <ion-icon name="arrow-forward-outline"></ion-icon>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
     </div>
-  </section>
 
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-  <script src="script.js"></script>
+    <div class="button">
+        <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+        <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+
+</div>
+
+<script>
+    const slide = document.querySelector('.slide');
+    const items = document.querySelectorAll('.item');
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    let index = 0;
+
+    function showSlide(i) {
+        index = (i + items.length) % items.length;
+        slide.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    prevButton.addEventListener('click', () => showSlide(index - 1));
+    nextButton.addEventListener('click', () => showSlide(index + 1));
+</script>
+
 </body>
-
 </html>
