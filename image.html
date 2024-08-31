@@ -3,158 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Slider</title>
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Animated Movie Slider</title>
     <style>
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .slide {
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFDEDE; /* Soft Pink */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .slider {
+            width: 80%;
+            max-width: 900px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .slides {
             display: flex;
             transition: transform 0.5s ease-in-out;
         }
 
-        .item {
+        .slide {
             min-width: 100%;
-            box-sizing: border-box;
-            position: relative;
+            height: 500px;
             background-size: cover;
             background-position: center;
-            height: 300px;
+            position: relative;
         }
 
         .content {
             position: absolute;
             bottom: 20px;
             left: 20px;
-            color: #fff;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 10px;
+            background: rgba(54, 79, 107, 0.7); /* Deep Slate Blue */
+            color: #FCF876; /* Lemon Yellow */
+            padding: 15px;
             border-radius: 5px;
         }
 
-        .content .name {
+        .content .title {
             font-size: 24px;
             font-weight: bold;
         }
 
-        .content .des {
+        .content .description {
             margin-top: 5px;
             font-size: 16px;
         }
 
-        .content button {
-            margin-top: 10px;
-            padding: 8px 16px;
-            border: none;
-            background-color: #ff5733;
-            color: #fff;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .button {
+        .navigation {
             position: absolute;
             top: 50%;
             width: 100%;
             display: flex;
             justify-content: space-between;
             transform: translateY(-50%);
+            pointer-events: none;
         }
 
-        .button button {
-            background-color: rgba(0, 0, 0, 0.5);
+        .navigation button {
+            background-color: rgba(54, 79, 107, 0.7); /* Deep Slate Blue */
             border: none;
-            color: #fff;
-            font-size: 18px;
+            color: #FCF876; /* Lemon Yellow */
+            font-size: 24px;
             cursor: pointer;
             padding: 10px;
             border-radius: 50%;
+            pointer-events: all;
+            transition: background-color 0.3s;
         }
 
-        .button button:hover {
-            background-color: rgba(0, 0, 0, 0.7);
+        .navigation button:hover {
+            background-color: #FFAAA5; /* Light Coral */
         }
-
     </style>
 </head>
 <body>
 
-<div class="container">
-
-    <div class="slide">
-
-        <div class="item" style="background-image: url(https://i.ibb.co/qCkd9jS/img1.jpg);">
+<div class="slider">
+    <div class="slides">
+        <div class="slide" style="background-image: url('E:/images/img1.jpg');">
             <div class="content">
-                <div class="name">Switzerland</div>
-                <div class="des">A land where majestic Alps meet serene lakes, Switzerland is a paradise for nature lovers and adventurers alike</div>
-                <button>See More</button>
+                <div class="title">Toy Story</div>
+                <div class="description">A tale of friendship and adventure with Woody and Buzz.</div>
             </div>
         </div>
-        <div class="item" style="background-image: url(https://i.ibb.co/jrRb11q/img2.jpg);">
+        <div class="slide" style="background-image: url('E:/images/img2.jpg');">
             <div class="content">
-                <div class="name">Finland</div>
-                <div class="des">Where the northern lights dance across the sky, and serene forests and lakes create a tranquil haven in Finland</div>
-                <button>See More</button>
+                <div class="title">Finding Nemo</div>
+                <div class="description">A journey across the ocean to find a lost son.</div>
             </div>
         </div>
-        <div class="item" style="background-image: url(https://i.ibb.co/NSwVv8D/img3.jpg);">
+        <div class="slide" style="background-image: url('E:/images/img3.jpg');">
             <div class="content">
-                <div class="name">Iceland</div>
-                <div class="des">A land of fire and ice, Iceland offers stunning contrasts with its dramatic landscapes and geothermal wonders</div>
-                <button>See More</button>
+                <div class="title">Frozen</div>
+                <div class="description">An icy adventure with Elsa and Anna.</div>
             </div>
         </div>
-        <div class="item" style="background-image: url(https://i.ibb.co/Bq4Q0M8/img4.jpg);">
+        <div class="slide" style="background-image: url('E:/images/img4.jpg');">
             <div class="content">
-                <div class="name">Australia</div>
-                <div class="des">From the Outback's rugged beauty to the vibrant coastal cities, Australia is a land of endless adventure and diversity</div>
-                <button>See More</button>
+                <div class="title">The Incredibles</div>
+                <div class="description">A family of superheroes saving the world together.</div>
             </div>
         </div>
-        <div class="item" style="background-image: url(https://i.ibb.co/jTQfmTq/img5.jpg);">
+        <div class="slide" style="background-image: url('E:/images/img5.jpg');">
             <div class="content">
-                <div class="name">Netherland</div>
-                <div class="des">Where windmills, tulip fields, and charming canals create a picturesque landscape in the Netherlands</div>
-                <button>See More</button>
+                <div class="title">Moana</div>
+                <div class="description">A brave girl sails across the ocean to save her people.</div>
             </div>
         </div>
-        <div class="item" style="background-image: url(https://i.ibb.co/RNkk6L0/img6.jpg);">
-            <div class="content">
-                <div class="name">Ireland</div>
-                <div class="des">A country of rolling green hills, ancient castles, and rich cultural heritage, Ireland enchants with its timeless beauty</div>
-                <button>See More</button>
-            </div>
-        </div>
-
     </div>
 
-    <div class="button">
-        <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
-        <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+    <div class="navigation">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
     </div>
-
 </div>
 
 <script>
-    const slide = document.querySelector('.slide');
-    const items = document.querySelectorAll('.item');
+    const slides = document.querySelector('.slides');
+    const slide = document.querySelectorAll('.slide');
     const prevButton = document.querySelector('.prev');
     const nextButton = document.querySelector('.next');
     let index = 0;
+    let autoSlide;
 
     function showSlide(i) {
-        index = (i + items.length) % items.length;
-        slide.style.transform = `translateX(-${index * 100}%)`;
+        index = (i + slide.length) % slide.length;
+        slides.style.transform = `translateX(-${index * 100}%)`;
     }
 
-    prevButton.addEventListener('click', () => showSlide(index - 1));
-    nextButton.addEventListener('click', () => showSlide(index + 1));
+    function startAutoSlide() {
+        autoSlide = setInterval(() => showSlide(index + 1), 3000);
+    }
+
+    function stopAutoSlide() {
+        clearInterval(autoSlide);
+    }
+
+    prevButton.addEventListener('click', () => {
+        stopAutoSlide();
+        showSlide(index - 1);
+        startAutoSlide();
+    });
+
+    nextButton.addEventListener('click', () => {
+        stopAutoSlide();
+        showSlide(index + 1);
+        startAutoSlide();
+    });
+
+    slides.addEventListener('mouseover', stopAutoSlide);
+    slides.addEventListener('mouseout', startAutoSlide);
+
+    startAutoSlide();
 </script>
 
 </body>
